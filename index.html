@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            margin: 50px auto;
+            width: 480px;
+            height: 270px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .figure {
+            position: absolute;
+        }
+
+        li {
+            float: left;
+        }
+
+        .main li img {
+            width: 480px;
+            height: 270px;
+            border: 2px solid #808080;
+        }
+
+        .radius {
+            position: absolute;
+            margin-left: 0;
+            margin-right: 0;
+            top: 240px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .radius li {
+            width: 10px;
+            height: 10px;
+            background-color: #c0c0c0;
+            border: .5px solid #c0c0c0;
+            border-radius: 50%;
+            margin-right: 5px;
+            opacity: .6;
+
+        }
+
+        /* .radius li:first-child {
+            background-color: #fff;
+            opacity: 1;
+        } */
+
+        .left,
+        .right {
+            background-color: rgba(0, 0, 0, .3);
+            border: 1px solid rgba(0, 0, 0, .3);
+            height: 30px;
+            width: 25px;
+            margin-top: -15px;
+            position: absolute;
+            top: 50%;
+        }
+
+        .left {
+            border-radius: 0 100% 100% 0;
+            left: 0;
+        }
+
+        .right {
+            position: absolute;
+            border-radius: 100% 0 0 100%;
+            right: 0;
+        }
+
+        .left:hover,
+        .right:hover {
+            background-color: rgba(0, 0, 0, .5);
+        }
+    </style>
+     <script src="carousel.js"></script>
+</head>
+
+<body>
+    <div class="main" id="app">
+        <ul class="figure" style="top: 0; left: 0; width: 0">
+            <component-img v-for="src in srcs " v-bind:url="src"></component-img>
+            <li><img src="images/SC01C01.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C02.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C03.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C04.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C05.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C06.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C07.jpg" alt="" srcset=""></li>
+            <li><img src="images/SC01C01.jpg" alt="" srcset=""></li>
+        </ul>
+        <ul class="radius">
+            <li id="0" style="background-color: #fff; opacity: 1;"></li>
+            <li id="1"></li>
+            <li id="2"></li>
+            <li id="3"></li>
+            <li id="4"></li>
+            <li id="5"></li>
+            <li id="6"></li>
+        </ul>
+        <img class="left" src="images/left.png">
+        <img class="right" src="images/right.png">
+    </div>
+</body>
+
+</html>
